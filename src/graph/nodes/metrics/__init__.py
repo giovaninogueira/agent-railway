@@ -3,3 +3,8 @@ from .memory_node import memory_node
 from .logs_node import logs_node
 from .status_node import status_node
 from .requests_node import requests_node
+from .logs_analysis_node import logs_analysis_node
+from .memory_analysis_node import memory_analysis_node
+from .cpu_analysis_node import cpu_analysis_node
+from .requests_analysis_node import requests_analysis_node
+from .status_analysis_node import status_analysis_node

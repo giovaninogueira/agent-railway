@@ -12,6 +12,11 @@ class AgentState(TypedDict):
     environment_id: str | None
     metrics: list
     logs_data: list
+    logs_analysis: dict
+    memory_analysis: dict
+    cpu_analysis: dict
+    requests_analysis: dict
+    status_analysis: dict
     cpu_data: list
     memory_data: list
     requests_data: dict
