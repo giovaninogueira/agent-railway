@@ -123,7 +123,7 @@ class RailwayService:
             "rx": result.get("NETWORK_RX_GB", []),
         }
 
-    def fetch_logs(self, filter: str = None) -> list:
+    def fetch_logs(self, filter: str = None, severity: str = None) -> list:
         if filter:
             query = LOGS_QUERY_WITH_FILTER
             variables = {"environmentId": self.environment_id, "filter": filter}
@@ -131,7 +131,10 @@ class RailwayService:
             query = LOGS_QUERY
             variables = {"environmentId": self.environment_id}
         data = self._query(query, variables)
-        return (data.get("data") or {}).get("environmentLogs", [])
+        logs = (data.get("data") or {}).get("environmentLogs", [])
+        if severity:
+            logs = [l for l in logs if (l.get("severity") or "").lower() == severity.lower()]
+        return logs
 
 
 def fetch_environments(project_id: str) -> list:

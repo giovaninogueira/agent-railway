@@ -22,4 +22,5 @@ class AgentState(TypedDict):
     is_vague: bool
     sufficient_context: bool
     clarification_needed: str | None
+    log_level: str | None
     

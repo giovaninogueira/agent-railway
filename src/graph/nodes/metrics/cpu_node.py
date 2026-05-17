@@ -8,5 +8,5 @@ def cpu_node(state):
         environment_id=state["environment_id"],
     )
     data = svc.fetch_cpu()
-    print(f">>> cpu_node: {len(data)} pontos")
+    
     return {"cpu_data": data}

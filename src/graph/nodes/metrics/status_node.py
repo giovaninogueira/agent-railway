@@ -14,5 +14,5 @@ def status_node(state):
         "alive": len(cpu) > 0,
         "recent_errors": len(errors),
     }
-    print(f">>> status_node: alive={status['alive']} errors={status['recent_errors']}")
+    
     return {"status_data": status}

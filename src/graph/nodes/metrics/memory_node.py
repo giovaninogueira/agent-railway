@@ -8,5 +8,5 @@ def memory_node(state):
         environment_id=state["environment_id"],
     )
     data = svc.fetch_memory()
-    print(f">>> memory_node: {len(data)} pontos")
+    
     return {"memory_data": data}
